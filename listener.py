@@ -20,4 +20,6 @@ while(1):
         string_stock = "Discos de 5Kg disponibles, mensaje de stock: '" + stock5kg + "'" + " " +  "https://www.decathlon.es/es/p/disco-de-fundicion-28-mm-musculacion-0-5-kg-a-20-kg-domyos-cross-fitness/_/R-p-7278?mc=1042303&c=NEGRO/"
         bot.send_message(8268229, string_stock)
 
+    bot.send_message(77771278, "Correcto")
+
     time.sleep(10)
