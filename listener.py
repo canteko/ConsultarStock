@@ -5,6 +5,10 @@ users={}
 bot=telebot.TeleBot("1310363512:AAEvI11_M_yuAEY3_Vg9VbpwCW0_5xi3UmU")
 
 bot.send_message(77771278, "Correcto")
+time.sleep(10)
+bot.send_message(77771278, "Correcto1")
+time.sleep(30)
+bot.send_message(77771278, "Correcto2")
 
 while(1):
     plates = pq(url='https://www.decathlon.es/es/p/disco-de-fundicion-28-mm-musculacion-0-5-kg-a-20-kg-domyos-cross-fitness/_/R-p-7278?mc=1042303&c=NEGRO/')
