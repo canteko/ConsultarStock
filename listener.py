@@ -11,7 +11,8 @@ time.sleep(30)
 bot.send_message(77771278, "Correcto2")
 
 while(1):
-    plates = pq(url='https://www.decathlon.es/es/p/disco-de-fundicion-28-mm-musculacion-0-5-kg-a-20-kg-domyos-cross-fitness/_/R-p-7278?mc=1042303&c=NEGRO/')
+    #plates = pq(url='https://www.decathlon.es/es/p/disco-de-fundicion-28-mm-musculacion-0-5-kg-a-20-kg-domyos-cross-fitness/_/R-p-7278?mc=1042303&c=NEGRO/')
+    plates = pq(url='https://www.decathlon.es/es/p/disco-de-fundicion-28-mm-musculacion-0-5-kg-a-20-kg-domyos-cross-fitness/_/R-p-7278?mc=1042303&c=NEGRO/', opener=lambda url, **kw: urllib.urlopen(url).read())
 
     stock10kg = plates('.sizes__info:contains("10 KG")').parent().find('.sizes__stock').find('.sizes__stock__info').html()
     stock5kg = plates('.sizes__info:contains("5 KG")').parent().find('.sizes__stock').find('.sizes__stock__info').html()
