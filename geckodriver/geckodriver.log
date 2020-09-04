@@ -1,0 +1,2 @@
+1599244346539	mozrunner::runner	INFO	Running command: "/snap/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.KEpbxxWXDjYJ"
+1599244405559	mozrunner::runner	INFO	Running command: "/snap/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.IDtgGzTvb1ic"
