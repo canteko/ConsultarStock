@@ -15,22 +15,29 @@ bot=telebot.TeleBot("1310363512:AAEvI11_M_yuAEY3_Vg9VbpwCW0_5xi3UmU")
 # CHROMEDRIVER_PATH = '/usr/bin/chromedriver'
 
 # Windows
-CHROME_PATH = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe'
-CHROMEDRIVER_PATH = 'C:/Program Files/ChromeDriver/chromedriver.exe'
-WINDOW_SIZE = "1920,1080"
+# CHROME_PATH = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe'
+# CHROMEDRIVER_PATH = 'C:/Program Files/ChromeDriver/chromedriver.exe'
+# WINDOW_SIZE = "1920,1080"
 
 #Declaramos las opciones necesarias para que abra el navegador en segundo plano
-chrome_options = Options()  
-chrome_options.add_argument("--headless")  
-chrome_options.add_argument("--window-size=%s" % WINDOW_SIZE)
-chrome_options.binary_location = CHROME_PATH
+# chrome_options = Options()  
+# chrome_options.add_argument("--headless")  
+# chrome_options.add_argument("--window-size=%s" % WINDOW_SIZE)
+# chrome_options.binary_location = CHROME_PATH
+
+options = Options()
+options.add_argument("--headless")
+options.add_argument("--disable-gpu")
+options.add_argument("--disable-dev-shm-usage")
+options.add_argument("--no-sandbox")
+
 
 #Abrimos el navegador
 #driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=chrome_options)
-driver = webdriver.Chrome()  
+driver = webdriver.Chrome(options=options)  
 
 #Bucle infinito
-while(1):
+while True:
     #Limpiamos cache y cookies, por si acaso estamos consultando todo el rato una página cacheada
     driver.get('chrome://settings/clearBrowserData')
     driver.find_element_by_xpath('//settings-ui').send_keys(Keys.ENTER)
