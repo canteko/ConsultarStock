@@ -38,21 +38,21 @@ while(1):
     plates = pq(elementHTML)
 
     #Buscamos si hay stock con PyQuery en el div correspondiente
-    stock10kg = plates('.sizes__size[data-weight="10.252"]').find('.sizes__stock').find('.sizes__stock__info').html()
-    stock5kg = plates('.sizes__size[data-weight="5.082"]').find('.sizes__stock').find('.sizes__stock__info').html()
+    stock10kg = plates('.sizes__size[data-weight="10.252"]').attr('data-available-quantity')
+    stock5kg = plates('.sizes__size[data-weight="5.082"]').attr('data-available-quantity')
 
     #Imprimimos el stock para que quede en terminal, aunque lo suyo es guardarlo en un log
-    print(str("Stock 10Kg: ") + str(stock10kg))
-    print(str("Stock 5Kg: ") + str(stock5kg))
+    print(str("Stock 10Kg: QUEDAN ") + str(stock10kg))
+    print(str("Stock 5Kg: QUEDAN ") + str(stock5kg))
 
     #Si el resultado no es "QUEDAN 0", mandamos mensaje al telegramo correspondiente
-    if(stock10kg != "QUEDAN 0"):
+    if(stock10kg != '0'):
         string_stock = str(str("Discos de 10Kg disponibles, mensaje de stock: '") + str(stock10kg) + str("' https://www.decathlon.es/es/p/disco-de-fundicion-28-mm-musculacion-0-5-kg-a-20-kg-domyos-cross-fitness/_/R-p-7278?mc=1042303&c=NEGRO/"))
         bot.send_message(77771278, string_stock)
         bot.send_message(324294249, string_stock)
         bot.send_message(8268229, string_stock)
 
-    if(stock5kg != "QUEDAN 0"):
+    if(stock5kg != '0'):
         string_stock = str(str("Discos de 5Kg disponibles, mensaje de stock: '") + str(stock5kg) + str("' https://www.decathlon.es/es/p/disco-de-fundicion-28-mm-musculacion-0-5-kg-a-20-kg-domyos-cross-fitness/_/R-p-7278?mc=1042303&c=NEGRO/"))
         bot.send_message(8268229, string_stock)
 
