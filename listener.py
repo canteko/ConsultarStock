@@ -9,8 +9,14 @@ from selenium.webdriver.common.keys import Keys
 bot=telebot.TeleBot("1310363512:AAEvI11_M_yuAEY3_Vg9VbpwCW0_5xi3UmU")
 
 #Declaramos la ubicación y el tamaño de ventana de chrome
-CHROME_PATH = '/usr/bin/google-chrome'
-CHROMEDRIVER_PATH = '/usr/bin/chromedriver'
+
+# Ubuntu
+# CHROME_PATH = '/usr/bin/google-chrome'
+# CHROMEDRIVER_PATH = '/usr/bin/chromedriver'
+
+# Windows
+CHROME_PATH = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe'
+CHROMEDRIVER_PATH = 'C:/Program Files/ChromeDriver/chromedriver.exe'
 WINDOW_SIZE = "1920,1080"
 
 #Declaramos las opciones necesarias para que abra el navegador en segundo plano
@@ -42,8 +48,8 @@ while(1):
     stock5kg = plates('.sizes__size[data-weight="5.082"]').attr('data-available-quantity')
 
     #Imprimimos el stock para que quede en terminal, aunque lo suyo es guardarlo en un log
-    # print(str("Stock 10Kg: QUEDAN ") + str(stock10kg))
-    # print(str("Stock 5Kg: QUEDAN ") + str(stock5kg))
+    print(str("Stock 10Kg: QUEDAN ") + str(stock10kg))
+    print(str("Stock 5Kg: QUEDAN ") + str(stock5kg))
 
     #Si el resultado no es "QUEDAN 0", mandamos mensaje al telegramo correspondiente
     if(stock10kg != '0'):
@@ -56,5 +62,5 @@ while(1):
         bot.send_message(77771278, string_stock)
         bot.send_message(8268229, string_stock)
 
-    #Dormimos el bot 10 segunditos que no nos salga el server muy caro
-    time.sleep(10)
+    # Dormimos el bot 10 segunditos que no nos salga el server muy caro
+    # time.sleep(10)
