@@ -9,8 +9,9 @@ def listener(messages):
         print(plid)
         if m.content_type=="text":
             if not m.text[0]=='/' and str(plid) not in users:
-            		bot.send_message(plid, "To begin, type '/start'") 
+            	bot.send_message(plid, "To begin, type '/start'") 
 
 bot.set_update_listener(listener)
+
 
 bot.polling()           
