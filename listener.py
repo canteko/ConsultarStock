@@ -8,23 +8,6 @@ from selenium.webdriver.common.keys import Keys
 #Importamos la key del bot
 bot=telebot.TeleBot("1310363512:AAEvI11_M_yuAEY3_Vg9VbpwCW0_5xi3UmU")
 
-#Declaramos la ubicación y el tamaño de ventana de chrome
-
-# Ubuntu
-# CHROME_PATH = '/usr/bin/google-chrome'
-# CHROMEDRIVER_PATH = '/usr/bin/chromedriver'
-
-# Windows
-CHROME_PATH = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe'
-CHROMEDRIVER_PATH = 'C:/Program Files/ChromeDriver/chromedriver.exe'
-WINDOW_SIZE = "1920,1080"
-
-#Declaramos las opciones necesarias para que abra el navegador en segundo plano
-chrome_options = Options()  
-chrome_options.add_argument("--headless")  
-chrome_options.add_argument("--window-size=%s" % WINDOW_SIZE)
-chrome_options.binary_location = CHROME_PATH
-
 #Abrimos el navegador
 #driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=chrome_options)
 driver = webdriver.Chrome()  
