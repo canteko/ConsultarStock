@@ -1,5 +1,4 @@
 import telebot
-from pyquery import PyQuery as pq
 import time
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
